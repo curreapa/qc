@@ -1,40 +1,52 @@
 <!--<router-outlet></router-outlet>-->
 <div class="contenedor">
   <div class="reproductor">
-    <app-player></app-player>
+    
+    <img class="icon-page" src="../../../assets/logo_small_blanco.png">
+    <div class="videos" id="main">
+      <div class="video-item" *ngFor="let a of numeros">
+        <app-player   *inView [url]="a"></app-player>
+      </div>
+    
   </div>
   <div class="menu">
     
-      <div class="nav-item">
-        <a href="/">
-          <i class="fa fa-home fa-lg"> </i>
-        </a>
-        <em>INICIO</em>
+      <div class="menu-fixed">
+        <div class="nav-item">
+          <a href="/">
+            <i class="fa fa-home fa-lg"> </i>
+          </a>
+          <em>INICIO</em>
+        </div>
+        <div class="nav-item">
+          <a href="https://queen-cam.com/intranet/">
+            <i class="fa fa-user fa-lg"> </i>
+            <em>INICIA SESION</em>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="https://queen-cam.com/subastas/index.php">
+            <i class="fa fa-gavel fa-lg"> </i>
+            <em>SUBASTA</em>
+          </a>
+          
+        </div>
+        <div class="nav-item">
+          <a href="/">
+            <i class="fa fa-bars fa-lg"> </i>
+            <em>MENU</em>
+          </a>
+          
+        </div>
+        <div class="nav-item">
+          <a href="https://queen-cam.com/buscador.php">
+            <i class="fa fa-search fa-lg"> </i>
+            <em>BUSQUEDA</em>
+          </a>
+          
+        </div>
       </div>
-      <div class="nav-item">
-        <a href="https://queen-cam.com/intranet/">
-          <i class="fa fa-user fa-lg"> </i>
-        </a>
-        <em>INICIA SESION</em>
-      </div>
-      <div class="nav-item">
-        <a href="/">
-          <i class="fa fa-video-camera fa-lg"> </i>
-        </a>
-        <em>MOMENTS</em>
-      </div>
-      <div class="nav-item">
-        <a href="/">
-          <i class="fa fa-bars fa-lg"> </i>
-        </a>
-        <em>MENU</em>
-      </div>
-      <div class="nav-item">
-        <a href="https://queen-cam.com/buscador.php">
-          <i class="fa fa-search fa-lg"> </i>
-        </a>
-        <em>BUSQUEDA</em>
-      </div>
+      
 
     
   </div>

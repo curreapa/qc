@@ -8,19 +8,31 @@
         grid-template-rows: repeat(2, auto);
     }
 	.reproductor {
-        width: 100vw;
-        height: 92vh;
+        position: relative;
 		background-color: black;
+        overflow-x:hidden;
+        overflow-y:hidden;
 	}
-    .menu{
-    
+    .videos {
+        height: 92vh;
+        overflow-x: auto;
         display: inline-block;
+        scroll-snap-type: y mandatory;
+    }
+
+    .video-item{
+        width: 100vw;
+        scroll-snap-align: start;
+    }
+    
+    .menu{
+        position: fixed;
+        z-index: 4;
         width: 100vw;
         height: 8vh;
         background-color: #ec407a;
-        clear: both;
         text-align: center;
-        
+        bottom: 0;
     }
     .menu > .menu-nav{
         position: relative;
@@ -33,6 +45,10 @@
         display: block;
         font-size: 10px;
         margin-top: 3%;
+       
+    }
+    a{
+        text-decoration: none;
     }
     .fa, em{
         color: white;
@@ -41,5 +57,21 @@
         margin: 3%;
         display: inline-block;
         padding: 0;
+        
     }
+    app-player{
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        
+    }
+    .icon-page{
+        position: fixed;
+        left: 0;
+        z-index: 5;
+        width: 20%;
+        margin-left: 3%;
+        margin-top: 3%;
+    }
+    
 }
