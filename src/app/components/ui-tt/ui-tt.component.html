@@ -1,9 +1,10 @@
 <div class="contenedor">
    <div class="grid">
        <div class="perfil">
-            <img src="../../../assets/xd.jpg" (click)="redirec()">
-            <div class="h5" (click)="redirec()">queencam</div>
+            <img src="assets/xd.jpg" (click)="redirec()">
+            <div class="h5" (click)="redirec()">{{linkInfo.nombre}}</div>
            <i class="fa fa-heart fa-2x icon-like"></i>
+           <i class="fa {{claseMute}}" (click)="mute()"></i>
        </div>
        
        

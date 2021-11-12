@@ -17,6 +17,7 @@ export class InView implements AfterViewInit {
   
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
+          
           this.renderContents(entry.isIntersecting)
         });
       }, {threshold: [0, .1, .9, 1]});
@@ -28,7 +29,9 @@ export class InView implements AfterViewInit {
       this.vcRef.clear();
       this.vcRef.createEmbeddedView(this.tplRef);
       this.alreadyRendered = true;
+      console.log("Estoy renmderizazndo !!!!!")
     }
+   
   }
 
   setMinWidthHeight(el:any) { // prevent issue being visible all together

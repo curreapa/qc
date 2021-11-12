@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { JsonService } from './services/json.service';
 import { PlugService } from './services/plug.service';
 
 @Component({
@@ -10,11 +11,11 @@ export class AppComponent implements AfterViewInit {
  
   title = 'ls-tt';
  
-  numeros:string[] = ["../../../assets/xd.mp4","../../../assets/xd - copia.mp4","../../../assets/xd - copia (2).mp4","../../../assets/xd - copia (3).mp4","../../../assets/xd - copia (4).mp4","../../../assets/xd - copia (5).mp4"];
 
+  dataJason:any[]=[]
 
-  constructor(private plugService:PlugService){
-   
+  constructor(private jsonService:JsonService){
+    this.dataJason = this.jsonService.jsonData;
   }
 
   ngAfterViewInit(): void {
@@ -23,13 +24,11 @@ export class AppComponent implements AfterViewInit {
     const scrollEvent = () => {
     
       if (main!.scrollTop > window.innerHeight / 2) {
-        this.plugService.cambiarEstado("autoplay")
+        
       } else {
         
       }
     }
-    
-    main!.addEventListener('scroll', scrollEvent);
   }
   
  

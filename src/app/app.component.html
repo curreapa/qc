@@ -2,10 +2,10 @@
 <div class="contenedor">
   <div class="reproductor">
     
-    <img class="icon-page" src="../../../assets/logo_small_blanco.png">
+    <img class="icon-page" src="assets/logo_small_blanco.png">
     <div class="videos" id="main">
-      <div class="video-item" *ngFor="let a of numeros">
-        <app-player   *inView [url]="a"></app-player>
+      <div class="video-item" *ngFor="let a of dataJason">
+        <app-player   *inView [infoPerfil]="a"></app-player>
       </div>
     
   </div>

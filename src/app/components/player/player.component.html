@@ -1,8 +1,9 @@
 
+<app-ui-tt [linkInfo]="infoPerfil"></app-ui-tt>
 <video #videoly [preload]="'preload'" 
        loop
        autoplay
+       [muted]="'muted'"
       >
-       <source [src]="url"  />      
+       <source [src]="formatSrc(infoPerfil.src)"  />      
 </video>
-<app-ui-tt></app-ui-tt>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,12 +8,18 @@ import { Router } from '@angular/router';
 })
 export class UiTtComponent implements OnInit {
 
+  @Input() linkInfo:any | undefined;
+  claseMute:string ="fa-volume-up fa-2x icon-mute"
+
   constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
 
   redirec(){
-    window.location.href = "https://queen-cam.com/p/fraaanbabe"
+    window.location.href = this.linkInfo.link
+  }
+  mute(){
+    this.claseMute = "fa-volume-off fa-2x icon-mute-2"
   }
 }

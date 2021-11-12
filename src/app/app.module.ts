@@ -7,22 +7,29 @@ import { PlayerComponent } from './components/player/player.component';
 import { UiTtComponent } from './components/ui-tt/ui-tt.component';
 import { MyHammerConfig } from './my-hammer.config';
 import { InView } from './services/InView.directive';
+import { MutedDirective } from './services/muted.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayerComponent,
-    UiTtComponent, InView
+    UiTtComponent, InView, MutedDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HammerModule
+    HammerModule,
+    HttpClientModule
   ],
   providers: [{
     provide:HAMMER_GESTURE_CONFIG,
     useClass:MyHammerConfig
-  }],
+
+  }, { provide: LocationStrategy, useClass: HashLocationStrategy }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
