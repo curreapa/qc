@@ -8,13 +8,11 @@ video{
     margin: 0;
     max-width: 100%; 
     max-height: 100%;
-height: auto;
+    height: auto;
 }
 
-ui-tt{
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    
+.perfil-icon{
+    position: absolute;
+    margin-top: 120%;
     
 }

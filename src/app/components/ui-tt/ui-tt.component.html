@@ -1,12 +1,12 @@
-<div class="contenedor">
-   <div class="grid">
-       <div class="perfil">
-            <img src="assets/xd.jpg" (click)="redirec()">
-            <div class="h5" (click)="redirec()">{{linkInfo.nombre}}</div>
-           <i class="fa fa-heart fa-2x icon-like"></i>
-           <i class="fa {{claseMute}}" (click)="mute()"></i>
+<div class="perfil-content">
+    <div class="side-left" (click)="redirec()">
+        <img src="assets/img_perfil.jpg" >
+        <div class="h5">{{linkInfo.nombre}}</div>
+    </div>
+    <div class="side-right">
+       <div class="function">
+        <i class="fa fa-heart fa-2x icon-like" (click)="like()"></i>
+        <i class="fa {{claseMute}}" (click)="mute()"></i>
        </div>
-       
-       
-   </div>
-</div>
+    </div>
+</div>  

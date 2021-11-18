@@ -1,16 +1,13 @@
 <!--<router-outlet></router-outlet>-->
 <div class="contenedor">
   <div class="reproductor">
-    
     <img class="icon-page" src="assets/logo_small_blanco.png">
     <div class="videos" id="main">
       <div class="video-item" *ngFor="let a of dataJason">
         <app-player   *inView [infoPerfil]="a"></app-player>
       </div>
-    
   </div>
   <div class="menu">
-    
       <div class="menu-fixed">
         <div class="nav-item">
           <a href="/">
@@ -36,18 +33,13 @@
             <i class="fa fa-bars fa-lg"> </i>
             <em>MENU</em>
           </a>
-          
         </div>
         <div class="nav-item">
           <a href="https://queen-cam.com/buscador.php">
             <i class="fa fa-search fa-lg"> </i>
             <em>BUSQUEDA</em>
           </a>
-          
         </div>
-      </div>
-      
-
-    
+      </div>       
   </div>
 </div>

@@ -1,9 +1,9 @@
 
-<app-ui-tt [linkInfo]="infoPerfil"></app-ui-tt>
+<app-ui-tt class="perfil-icon"  (volumen)="volumen($event)" [linkInfo]="infoPerfil"></app-ui-tt>
 <video #videoly [preload]="'preload'" 
        loop
        autoplay
-       [muted]="'muted'"
+       [muted]="estado"
       >
        <source [src]="formatSrc(infoPerfil.src)"  />      
 </video>

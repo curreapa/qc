@@ -1,61 +1,38 @@
+.perfil-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 6px;
+}
 
-.contenedor{
+.side-left{
     position: relative;
-    z-index: 2;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-.grid{
-   position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.perfil{
-    float: left;
-    width: 100%;
     display: flex;
-    position: absolute;
-    top: 60vh;
-    align-items: center;
+    width: 50vw;
 }
-.perfil > img{
-    width: 10%;
-    border-radius: 50%;
+.side-left > img{
+    width: 30px;
+    height: 30px;
     border: 1px solid white;
-    margin-left: 3%;
+    border-radius: 15px;
 }
-.perfil > .h5{
-    font-weight: bold;
-    color: white;  
-    margin-left: 3%;
-    font-size: 15px;
-    text-shadow: 0.1em 0.1em 0.2em black;
-}
-.icon-like{
-    position:  absolute;
+.side-left > .h5{
     color: white;
-    right: 0;
-    margin-right: 3%;
-    text-shadow: 0.1em 0.1em 0.2em black;
+    font-weight: bold;
+}
+.side-left > .h5, img{
+    margin: 5px;
 }
 
-.icon-mute{
-    position:  absolute;
+.side-right > .function{
     color: white;
-    right: 0;
-    margin-top: 8vh;
-    margin-right: 3%;
-    
-    text-shadow: 0.1em 0.1em 0.2em black;
+    float: right;
 }
-.icon-mute-2{
-    position:  absolute;
-    color: white;
-    right: 0;
-    margin-top: 8vh;
-    margin-right: 6%;
+.side-right > .function > i {
+   display: block;
+   text-shadow: 0.1em 0.1em 0.2em black;
 }
+
+.icon-mute, .icon-mute-2{
+    margin-top: 30px;
+}
+ 

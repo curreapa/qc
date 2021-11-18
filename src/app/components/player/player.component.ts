@@ -1,8 +1,4 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { Component, HostListener, OnInit,Input, ViewChild, ElementRef } from '@angular/core';
-
-import { PlugService } from 'src/app/services/plug.service';
-
+import { Component, OnInit,Input, ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-player',
@@ -15,20 +11,25 @@ export class PlayerComponent implements OnInit {
   @Input() infoPerfil:any | undefined;
 
   @ViewChild('videoly') videoly!: ElementRef;
-  estado:string="none";
+  estado:string="muted";
 
-  constructor(private plugService:PlugService) {
-    
+  constructor() {
   }
-  
 
   ngOnInit(): void {
   }
 
   formatSrc(src:string):string{
-    src = src.replace(String.fromCharCode(92), "");
-    
+
+    src = src.replace(String.fromCharCode(92), ""); 
     return "https://queen-cam.com/"+src;
+
+  }
+
+  volumen(volumen:string){
+
+    this.estado = volumen;
+    
   }
 }
 

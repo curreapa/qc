@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { JsonService } from 'src/app/services/json.service';
 
 @Component({
   selector: 'app-ui-tt',
@@ -9,9 +10,9 @@ import { Router } from '@angular/router';
 export class UiTtComponent implements OnInit {
 
   @Input() linkInfo:any | undefined;
-  claseMute:string ="fa-volume-up fa-2x icon-mute"
-
-  constructor(private route:Router) { }
+  claseMute:string ="fa-volume-off fa-2x icon-mute-2"
+  @Output() volumen = new EventEmitter<string>();
+  constructor(private route:Router, private json:JsonService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,17 @@ export class UiTtComponent implements OnInit {
     window.location.href = this.linkInfo.link
   }
   mute(){
-    this.claseMute = "fa-volume-off fa-2x icon-mute-2"
+    if(this.claseMute != "fa-volume-up fa-2x icon-mute"){
+
+      this.claseMute = "fa-volume-up fa-2x icon-mute"
+      this.volumen.emit("")
+    }else{
+      this.claseMute = "fa-volume-off fa-2x icon-mute-2"
+      this.volumen.emit("muted")
+    }
+    
+  }
+  like(){
+    this.json.likeProfile(this.linkInfo.id)
   }
 }
