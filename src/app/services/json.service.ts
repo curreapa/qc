@@ -10,9 +10,8 @@ export class JsonService {
 
   jsonData: any[] = [];
   ipCliente:string = "";
-
+  muted:string= ""
   constructor(private http: HttpClient) {
-
     this.obtenerIp().subscribe(data => {
       this.ipCliente = data.ip;
       var ip = data.ip;
@@ -20,7 +19,6 @@ export class JsonService {
         Object.entries(data).forEach(i => {
           this.jsonData.push(i["1"])
         })
-
       })
     })
   }
@@ -30,15 +28,12 @@ export class JsonService {
       id: iditem,
       ip: this.ipCliente
     }
-
     return this.http.put('https://www.cristianurrea.dev/api/v1/queens/tiktok/like/', like)
   }
 
 
   obtenerIp(): Observable<any> {
-
     var ip: string = "";
-
     return this.http.get("https://api.ipify.org/?format=json")
 
   }

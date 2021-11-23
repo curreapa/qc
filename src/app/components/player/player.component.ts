@@ -1,4 +1,5 @@
 import { Component, OnInit,Input, ViewChild, ElementRef} from '@angular/core';
+import { JsonService } from 'src/app/services/json.service';
 
 @Component({
   selector: 'app-player',
@@ -13,7 +14,9 @@ export class PlayerComponent implements OnInit {
   @ViewChild('videoly') videoly!: ElementRef;
   estado:string="muted";
 
-  constructor() {
+  constructor(private json:JsonService) {
+
+    this.estado = this.json.muted
   }
 
   ngOnInit(): void {

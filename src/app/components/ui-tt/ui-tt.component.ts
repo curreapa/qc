@@ -30,10 +30,10 @@ export class UiTtComponent implements AfterViewInit {
     if(this.claseMute != "fa-volume-up fa-2x icon-mute"){
 
       this.claseMute = "fa-volume-up fa-2x icon-mute"
-      this.volumen.emit("")
+      this.json.muted = ""
     }else{
       this.claseMute = "fa-volume-off fa-2x icon-mute-2"
-      this.volumen.emit("muted")
+      this.json.muted = "muted"
     }
     
   }
